@@ -27,12 +27,12 @@ git clone https://github.com/your-username/online-scam-guide.git
 5️⃣ Run the project in the browser.  
 
 ## **🔹 Project Team**  
-👨‍💻 **Creator:** Venkatesha S (📧 venkateshagali2000@gmail.com)  
+👨‍💻 **Creator:** Venkatesha S (📧 agalivenkatesha@gmail.com)  
 🤝 **Team Members:** Meghana Raj S N, Prajwal M N  
 
 ## **🔹 Contribute & Support**  
 Feel free to contribute, raise issues, or suggest improvements!  
 
-📧 **Contact:** venkateshagali2000@gmail.com  
+📧 **Contact:** agalivenkatesha@gmail.com  
 
 ---
