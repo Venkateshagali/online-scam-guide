@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - The Online Scam Guide</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">⚠️ The Online Scam Guide</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="report-fraud.html">Report Fraud</a></li>
+                <li><a href="latest-alerts.html">Latest Alerts</a></li>
+                <li><a href="prevention.html">Prevention Tips</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="contact-container">
+        <h1>Get in Touch</h1>
+        <p>If you have any questions or need assistance, feel free to contact us.</p>
+        <form action="backend/contact-form.php" method="POST">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit" class="btn">📩 Send Message</button>
+        </form>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 The Online Scam Guide. All rights reserved.</p>
+    </footer>
+</body>
+</html>

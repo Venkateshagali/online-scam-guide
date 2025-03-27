@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Fraud Alerts - The Online Scam Guide</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">⚠️ The Online Scam Guide</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="report-fraud.html">Report Fraud</a></li>
+                <li><a href="latest-alerts.html">Latest Alerts</a></li>
+                <li><a href="prevention.html">Prevention Tips</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="alerts-container">
+        <h1>Recent Scam Alerts</h1>
+        <p>Stay updated on the latest reported scams.</p>
+        <div id="alerts"></div>
+    </section>
+    
+    <script>
+        // Fetch and display latest fraud reports
+        fetch('backend/fetch-alerts.php')
+            .then(response => response.json())
+            .then(data => {
+                let alertContainer = document.getElementById('alerts');
+                if (data.length === 0) {
+                    alertContainer.innerHTML = '<p>No scam reports available.</p>';
+                } else {
+                    data.forEach(report => {
+                        let reportDiv = document.createElement('div');
+                        reportDiv.classList.add('alert-item');
+                        reportDiv.innerHTML = `
+                            <h3>${report.fraud_type}</h3>
+                            <p><strong>By:</strong> ${report.name}</p>
+                            <p>${report.description}</p>
+                            <p><small>${report.date}</small></p>
+                        `;
+                        alertContainer.appendChild(reportDiv);
+                    });
+                }
+            });
+    </script>
+    
+    <footer>
+        <p>&copy; 2025 The Online Scam Guide. All rights reserved.</p>
+    </footer>
+</body>
+</html>
