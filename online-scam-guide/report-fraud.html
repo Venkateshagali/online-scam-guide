@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Fraud - The Online Scam Guide</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">⚠️ The Online Scam Guide</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="report-fraud.html">Report Fraud</a></li>
+                <li><a href="latest-alerts.html">Latest Alerts</a></li>
+                <li><a href="prevention.html">Prevention Tips</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="form-container">
+        <h1>Report a Scam</h1>
+        <p>Help others stay safe by reporting scams you’ve encountered.</p>
+        <form action="backend/submit-report.php" method="POST">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="fraud_type">Type of Fraud:</label>
+            <select id="fraud_type" name="fraud_type" required>
+                <option value="Phishing">Phishing</option>
+                <option value="Identity Theft">Identity Theft</option>
+                <option value="Fake Websites">Fake Websites</option>
+                <option value="Online Scams">Online Scams</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="5" required></textarea>
+
+            <button type="submit" class="btn">🚨 Submit Report</button>
+        </form>
+    </section>
+    <section class="report-section">
+        <h2>Report Online Scams</h2>
+        <p>If you have been a victim of online fraud, report it immediately using the official government portals.</p>
+    
+        <div class="report-links">
+            <div class="report-box">
+                <h3>National Cyber Crime Reporting Portal</h3>
+                <p>Report cybercrimes including financial fraud, phishing, and identity theft.</p>
+                <a href="https://cybercrime.gov.in/" target="_blank" class="report-btn">Report Now</a>
+            </div>
+    
+            <div class="report-box">
+                <h3>Sanchar Saathi - Fraud Communication</h3>
+                <p>Report fraudulent telecom-related messages and calls.</p>
+                <a href="https://sancharsaathi.gov.in/sfc" target="_blank" class="report-btn">Report Now</a>
+            </div>
+    
+            <div class="report-box">
+                <h3>Cyber Crime Helpline</h3>
+                <p>If you need immediate assistance, call the cyber crime helpline.</p>
+                <a href="tel:1930" class="report-btn">Call 1930</a>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 The Online Scam Guide. All rights reserved.</p>
+    </footer>
+</body>
+</html>

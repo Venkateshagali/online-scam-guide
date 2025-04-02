@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Fraud Alerts - The Online Scam Guide</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">⚠️ The Online Scam Guide</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="report-fraud.html">Report Fraud</a></li>
+                <li><a href="latest-alerts.html">Latest Alerts</a></li>
+                <li><a href="prevention.html">Prevention Tips</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="latest-alerts">
+        <h2>Latest Online Scam Reports</h2>
+        <p>Stay updated with recent fraud cases and take precautions to avoid them.</p>
+
+        <div class="alerts-container">
+            <ul id="alerts-list">
+                <li>Loading latest scam alerts...</li>
+            </ul>
+        </div>
+    </section>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        fetch("backend/fetch-alerts.php")
+            .then(response => response.json())
+            .then(data => {
+                let alertsContainer = document.getElementById("alerts-list");
+                alertsContainer.innerHTML = ""; // Clear loading text
+
+                if (!data || data.length === 0) {
+                    alertsContainer.innerHTML = "<li>No recent scam reports available.</li>";
+                    return;
+                }
+
+                let alertsHTML = "";
+                data.forEach(alert => {
+                    let scammerName = alert.name ? alert.name : "Anonymous";
+                    let scamDate = new Date(alert.date).toLocaleString();
+                    alertsHTML += `
+                        <li class="alert-box">
+                            <h3>${scammerName} - ${alert.fraud_type}</h3>
+                            <p>${alert.description}</p>
+                            <small><strong>📅 Date:</strong> ${scamDate}</small>
+                        </li>`;
+                });
+                alertsContainer.innerHTML = alertsHTML;
+            })
+            .catch(error => {
+                console.error("Error fetching alerts:", error);
+                document.getElementById("alerts-list").innerHTML = "<li>Failed to load alerts. Please try again later.</li>";
+            });
+    });
+    </script>
+
+    <footer>
+        <p>&copy; 2025 The Online Scam Guide. All rights reserved.</p>
+    </footer>
+</body>
+</html>
